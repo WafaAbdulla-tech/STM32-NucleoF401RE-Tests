@@ -8,3 +8,4 @@ Steps:
    Set 5th bit of GPIOA data register
  
 Execution Result:
+![image](https://user-images.githubusercontent.com/63492659/152985385-d4ed7225-b3d7-40dc-98c5-bde2b97992af.png)
