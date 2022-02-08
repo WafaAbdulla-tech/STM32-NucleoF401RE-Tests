@@ -26,9 +26,9 @@ int main(void) {
 	//Enable RCC Clock for pheripheral memory
 	//Use volatile for memory mapped IO(Volatile data) GPIOA
 	uint32_t volatile *pclkperipheralenablereg = (uint32_t*) 0x40023830;
-	// gpioA mode register as Input (GPIOA)
+	// gpioA mode register as Input for 0th bit and Output for 5 th pin (GPIOA)
 	uint32_t volatile *pgpioamodereg = (uint32_t*) 0x40020000;
-	//Enable Gpio led pin(PD12)
+	//Enable GPIOA LED pin(LED2-PA5)
 	uint32_t volatile *pgpiodledpin = (uint32_t*) 0x40020014;
 	uint32_t volatile *pgpioadatareg = (uint32_t*) 0x40020010;
 
@@ -42,9 +42,11 @@ int main(void) {
 	{
 		uint8_t val = (uint8_t) (*pgpioadatareg & 0x1);
 		if (val) {
+			//Set LED high
 			*pgpiodledpin |= (1 << 5);
 			printf("LED is ON\n");
-		} else {
+		} else { 
+			//Set LED low
 			*pgpiodledpin &= ~(1 << 5);
 			printf("LED is OFF\n");
 		}
