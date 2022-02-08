@@ -2,8 +2,10 @@ Switch based Inbuild LED blink test:
 
 Flow chart:Based on PA0 input, inbuild LED blinks(PA5)
 
-1:Enable GPIOA , RCC Pheripheral clock.
+1:Enable GPIOA , RCC Peripheral clock.
+
 2.Set GPIOA mode register(pin 0 -input ) and (pin5 -output)
+
 3.Set GPIOA data register (PA5 Inbuild LED) value according to test case.
 
 Execution result:
