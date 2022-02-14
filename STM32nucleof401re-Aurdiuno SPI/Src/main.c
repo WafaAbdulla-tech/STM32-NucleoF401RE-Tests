@@ -41,19 +41,19 @@ int main(void) {
 	//PB10 -SCK
 	//PC2 -MISO
 	//PC3 - MOSI
-	//Alternate function(PB10) Choose Alternate value for SPI(0101 on corresponding bits)
+	//Alternate function(PB10) Choose Alternate value for bits
 	*pgpiobportmoderegister |= (1 << 21);
 	*pgpiobportmoderegister &= ~(1 << 20);
 	//Alternate function(PC2 nad PC3)
 	*pgpiocportmoderegister |= (1 << 5) | (1 << 7);
 	*pgpiocportmoderegister &= ~((1 << 6) | (1 << 4));
 
-	//GPIO alternate function low register (GPIOx_AFRL)
+	//GPIO alternate function low register (GPIOx_AFRH) SPI(0101 on corresponding bits)
 	uint32_t *pgpiobalterlow = 0x40020424;
 	//alternate function low AF5-0101(22 and 20 bits)
 	*pgpiobalterlow |= (1 << 10) | (1 << 8);
 	*pgpiobalterlow &= ~((1 << 11) | (1 << 9));
-
+        //GPIO alternate function low register (GPIOx_AFRL)  SPI(0101 on corresponding bits)
 	uint32_t *pgpiocalterlow = 0x40020820;
 	//alternate function low PC2 and PC3(0101)
 	*pgpiocalterlow |= (1 << 10) | (1 << 8) | (1 << 14) | (1 << 12);
