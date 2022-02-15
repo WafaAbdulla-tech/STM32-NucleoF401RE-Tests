@@ -9,8 +9,11 @@ GPIO Connections - PB10(SCK), PC2(MISO), and PC3(MOSI), Used software slave mana
 Flow chart:
 
 1.Enable SPI2, GPIOB and GPIOC Peripheral clock in RCC.
-2.Configure SPI2, control register settings values
+
+2.Configure SPI2, control register settings values.
+
 3.Configure GPIO Pins on GPIO Mode register.
+
 4.Hardware connection setup(No need to setup NSS pins , since used Software slave management)
 
 Aurdiuno uno - Slave
