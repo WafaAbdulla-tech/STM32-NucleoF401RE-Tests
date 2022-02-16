@@ -24,7 +24,7 @@
 
 int main(void) {
 	//InBuild LED PA5 Flash Program
-	//Enable RCC Clock for pheripheral memory
+	//Enable RCC Clock for peripheral memory
 	uint32_t *pclkperipheralenablereg = (uint32_t*) 0x40023830;
 	// gpio PORT mode register as output (GPIOA)
 	uint32_t *pgpioaportmoderegister = 0x40020000;
